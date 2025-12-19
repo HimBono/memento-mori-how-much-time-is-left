@@ -1,0 +1,7 @@
+{
+  "name": "Memento Mori - How much Time is left ",
+  "description": "An existential yet motivating dashboard that calculates your remaining time based on global life expectancy data. Visualizes your 'life horizon' in months, weeks, days, and hours using Gemini-powered insights and Google Search grounding.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
