@@ -26,21 +26,21 @@ const App: React.FC = () => {
       delay: Math.random() * 10,
       duration: 15 + Math.random() * 10
     }));
-    
+
     const sandclocks = Array.from({ length: 8 }).map((_, i) => ({
       id: `sandclock-${i}`,
       left: Math.random() * 100,
       delay: Math.random() * 12,
       duration: 25 + Math.random() * 8
     }));
-    
+
     const clocks = Array.from({ length: 8 }).map((_, i) => ({
       id: `clock-${i}`,
       left: Math.random() * 100,
       delay: Math.random() * 12,
       duration: 28 + Math.random() * 8
     }));
-    
+
     return { dots, sandclocks, clocks };
   }, []); // Empty dependency array - only generate once
 
@@ -162,16 +162,16 @@ const App: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // Clear previous errors
     setError(null);
-    
+
     // Validate age
     if (!ageInput || ageInput.trim() === '' || formData.age < 1 || formData.age > 120) {
       setError("Please enter a valid age between 1 and 120.");
       return;
     }
-    
+
     // Validate country - check both formData.country and countrySearch
     const selectedCountry = formData.country.trim();
     const searchCountry = countrySearch.trim();
@@ -179,7 +179,7 @@ const App: React.FC = () => {
       setError("Every journey needs a starting point. Please select a country from the dropdown.");
       return;
     }
-    
+
     // Validate doomscrolling hours if toggle is enabled
     if (showDoomscrollInput) {
       if (!doomscrollHours || doomscrollHours.trim() === '') {
@@ -192,7 +192,7 @@ const App: React.FC = () => {
         return;
       }
     }
-    
+
     setLoading(true);
     try {
       // Always use 'male' as gender
@@ -356,9 +356,9 @@ const App: React.FC = () => {
                 {showDoomscrollInput && (
                   <>
                     <div style={{ display: 'flex', justifyContent: 'center', marginTop: '10px', marginBottom: '10px' }}>
-                      <img 
-                        src="/360_F_950983529_O3WooGHQjM7w3Y3A0kw6a5cGqyaob1Zx.jpg" 
-                        alt="Doomscrolling" 
+                      <img
+                        src="/360_F_950983529_O3WooGHQjM7w3Y3A0kw6a5cGqyaob1Zx.jpg"
+                        alt="Doomscrolling"
                         style={{
                           maxWidth: '200px',
                           width: '100%',
@@ -418,7 +418,7 @@ const App: React.FC = () => {
               {doomscrollHours && parseFloat(doomscrollHours) > 0 && result && (
                 <div className="mystic-card" style={{ marginTop: '40px' }}>
                   <h3 style={{ marginBottom: '20px', textAlign: 'center' }}>The Cost of Doomscrolling</h3>
-                  
+
                   {(() => {
                     const doomscrollHoursPerDay = parseFloat(doomscrollHours);
                     const awakeHoursPerDay = 16; // Assuming 8 hours sleep
@@ -562,55 +562,55 @@ const App: React.FC = () => {
           borderTop: '1px solid rgba(255, 255, 255, 0.1)',
           boxSizing: 'border-box'
         }}>
-        {/* Buy Me a Coffee - Left */}
-        <a 
-          href="https://buymeacoffee.com/himbono" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            textDecoration: 'none',
-            transition: 'transform 0.2s ease-out',
-            filter: 'brightness(0.9)'
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.transform = 'scale(1.05)';
-            e.currentTarget.style.filter = 'brightness(1.1)';
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.transform = 'scale(1)';
-            e.currentTarget.style.filter = 'brightness(0.9)';
-          }}
-        >
-          <img 
-            src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" 
-            alt="Buy Me a Coffee" 
+          {/* Buy Me a Coffee - Left */}
+          <a
+            href="https://buymeacoffee.com/himbono"
+            target="_blank"
+            rel="noopener noreferrer"
             style={{
-              height: '32px',
-              width: 'auto',
-              objectFit: 'contain'
+              display: 'flex',
+              alignItems: 'center',
+              textDecoration: 'none',
+              transition: 'transform 0.2s ease-out',
+              filter: 'brightness(0.9)'
             }}
-          />
-        </a>
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = 'scale(1.05)';
+              e.currentTarget.style.filter = 'brightness(1.1)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = 'scale(1)';
+              e.currentTarget.style.filter = 'brightness(0.9)';
+            }}
+          >
+            <img
+              src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
+              alt="Buy Me a Coffee"
+              style={{
+                height: '32px',
+                width: 'auto',
+                objectFit: 'contain'
+              }}
+            />
+          </a>
 
-        {/* Stoic Quote - Middle */}
-        <div style={{
-          flex: 1,
-          textAlign: 'center',
-          padding: '0 20px',
-          fontStyle: 'italic',
-          fontSize: '0.9rem',
-          color: 'rgba(255, 255, 255, 0.7)',
-          fontFamily: "'Cormorant Garamond', serif",
-          lineHeight: '1.3'
-        }}>
-          "You have power over your mind—not outside events. Realize this, and you will find strength."
-        </div>
+          {/* Stoic Quote - Middle */}
+          <div style={{
+            flex: 1,
+            textAlign: 'center',
+            padding: '0 20px',
+            fontStyle: 'italic',
+            fontSize: '0.9rem',
+            color: 'rgba(255, 255, 255, 0.7)',
+            fontFamily: "'Cormorant Garamond', serif",
+            lineHeight: '1.3'
+          }}>
+            "You have power over your mind—not outside events. Realize this, and you will find strength."
+          </div>
 
-        {/* Right side - empty for balance */}
-        <div style={{ width: '140px' }}></div>
-      </footer>
+          {/* Right side - empty for balance */}
+          <div style={{ width: '140px' }}></div>
+        </footer>
       )}
     </div>
   );
